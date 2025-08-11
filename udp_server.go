@@ -1,11 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net"
-	"time"
-	"fmt"
 	"os"
+	"time"
 )
 
 func main() {
@@ -15,7 +15,7 @@ func main() {
 		log.Fatal(err)
 	}
 	defer udpServer.Close()
-	
+
 	log.Println("Now listening for packets on port 8080..")
 
 	for {

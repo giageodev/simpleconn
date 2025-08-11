@@ -31,7 +31,7 @@ func main() {
 	log.Println("Remote endpoint address: " + conn.RemoteAddr().String())
 
 	buffer := make([]byte, 1024)
-	
+
 	for {
 		log.Println("Awaiting incoming message (1024b buffer)..")
 		n, err := conn.Read(buffer)

@@ -15,15 +15,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-	for i:=0; i < 1000000; i++ {
+	for i := 0; i < 1000000; i++ {
 		_, err := conn.Write([]byte(strconv.Itoa(i)))
 		if err != nil {
 			log.Printf("Error sending packet #%v: %v\n", i, err.Error())
 			os.Exit(1)
-		} 
+		}
 		time.Sleep(time.Millisecond * 100)
-		 
-		if i % 100 == 0 {
+
+		if i%100 == 0 {
 			log.Printf("Currently at packet %v\n", i)
 		}
 	}

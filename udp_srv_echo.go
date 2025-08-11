@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 	"net"
-	"strconv"
 	"os"
+	"strconv"
 )
 
 func main() {
@@ -14,10 +14,10 @@ func main() {
 		log.Fatal(err)
 	}
 	defer udpServer.Close()
-	
+
 	log.Println("Now listening for packets on " + localAddr)
 
-	for i:=0; i<1000000; i++ {
+	for i := 0; i < 1000000; i++ {
 		buf := make([]byte, 1024)
 		n, _, err := udpServer.ReadFrom(buf)
 		if err != nil {
@@ -36,6 +36,6 @@ func main() {
 			os.Exit(1)
 		}
 	}
-	
+
 	log.Println("Received 1 million UDP packets, uncorrupted and in order!")
 }
